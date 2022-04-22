@@ -6,6 +6,6 @@ git add %project%.ip_user_files
 git add %project%.sim
 git add %project%.srcs
 git add %project%.xpr
-git add push.bat README.md
+git add push.bat README.md backup.bat
 git commit -m "See History.h for changes"
 git push origin main
