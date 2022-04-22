@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 `include "printer.vh"
 
-module controller
+module controller_a
 (
     input CLK, RESETN, BUTTON,
         
@@ -28,10 +28,10 @@ module controller
         end
 
         if (BUTTON) begin
-            fifo_out   <= {"Sheri: ", 64'd12345678, PFMT_DEC | PFMT_CRLF | 0};
+            fifo_out   <= {"Hello world from the FPGA!\r\n", PFMT_STR};
             fifo_wr_en <= 1;            
         end
     end
 
 endmodule
- 
+  

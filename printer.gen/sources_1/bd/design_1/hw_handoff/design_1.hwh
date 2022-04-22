@@ -1,43 +1,38 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 22 15:55:11 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 22 16:34:18 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.0" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="CPU_RESETN" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_CPU_RESETN">
       <CONNECTIONS>
+        <CONNECTION INSTANCE="controller_b" PORT="RESETN"/>
         <CONNECTION INSTANCE="printer" PORT="RESETN"/>
-        <CONNECTION INSTANCE="controller_0" PORT="RESETN"/>
-        <CONNECTION INSTANCE="controller_b_0" PORT="RESETN"/>
+        <CONNECTION INSTANCE="controller_a" PORT="RESETN"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK100MHZ" SIGIS="clk" SIGNAME="External_Ports_CLK100MHZ">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="btn_up" PORT="CLK"/>
-        <CONNECTION INSTANCE="button_0" PORT="CLK"/>
+        <CONNECTION INSTANCE="button_up" PORT="CLK"/>
+        <CONNECTION INSTANCE="button_dn" PORT="CLK"/>
+        <CONNECTION INSTANCE="controller_b" PORT="CLK"/>
         <CONNECTION INSTANCE="printer" PORT="CLK"/>
-        <CONNECTION INSTANCE="controller_0" PORT="CLK"/>
-        <CONNECTION INSTANCE="controller_b_0" PORT="CLK"/>
+        <CONNECTION INSTANCE="controller_a" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="BTNU" SIGIS="undef" SIGNAME="External_Ports_BTNU">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="btn_up" PORT="PIN"/>
+        <CONNECTION INSTANCE="button_up" PORT="PIN"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="BTND" SIGIS="undef" SIGNAME="External_Ports_BTND">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="button_0" PORT="PIN"/>
+        <CONNECTION INSTANCE="button_dn" PORT="PIN"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="UART_RXD" SIGIS="undef" SIGNAME="External_Ports_UART_RXD">
+    <PORT DIR="O" NAME="UART_TXD" SIGIS="undef" SIGNAME="axi_uartlite_tx">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_uartlite_0" PORT="rx"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="UART_TXD" SIGIS="undef" SIGNAME="axi_uartlite_0_tx">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_uartlite_0" PORT="tx"/>
+        <CONNECTION INSTANCE="axi_uartlite" PORT="tx"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="LED16_B" SIGIS="undef" SIGNAME="printer_BLINKY">
@@ -55,7 +50,7 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE COREREVISION="29" FULLNAME="/axi_uartlite_0" HWVERSION="2.0" INSTANCE="axi_uartlite_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_uartlite" VLNV="xilinx.com:ip:axi_uartlite:2.0">
+    <MODULE COREREVISION="29" FULLNAME="/axi_uartlite" HWVERSION="2.0" INSTANCE="axi_uartlite" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_uartlite" VLNV="xilinx.com:ip:axi_uartlite:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_uartlite;v=v2_0;d=pg142-axi-uartlite.pdf"/>
       </DOCUMENTS>
@@ -265,97 +260,93 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_awaddr">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_awvalid">
+        <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_awready">
+        <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_wvalid" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wvalid">
+        <PORT DIR="I" NAME="s_axi_wvalid" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wready">
+        <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_bvalid" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_bvalid">
+        <PORT DIR="O" NAME="s_axi_bvalid" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_bready" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_bready">
+        <PORT DIR="I" NAME="s_axi_bready" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_araddr">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_arvalid">
+        <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_arready" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_arready">
+        <PORT DIR="O" NAME="s_axi_arready" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_rvalid" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rvalid">
+        <PORT DIR="O" NAME="s_axi_rvalid" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rready">
+        <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="M_AXI_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rx" SIGIS="undef" SIGNAME="External_Ports_UART_RXD">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="UART_RXD"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="tx" SIGIS="undef" SIGNAME="axi_uartlite_0_tx">
+        <PORT DIR="I" NAME="rx" SIGIS="undef"/>
+        <PORT DIR="O" NAME="tx" SIGIS="undef" SIGNAME="axi_uartlite_tx">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="UART_TXD"/>
           </CONNECTIONS>
@@ -422,33 +413,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/btn_up" HWVERSION="1.0" INSTANCE="btn_up" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="button" VLNV="xilinx.com:module_ref:button:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="C_ACTIVE" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_button_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK100MHZ">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="CLK100MHZ"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="PIN" SIGIS="undef" SIGNAME="External_Ports_BTNU">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="BTNU"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="Q" SIGIS="undef" SIGNAME="btn_up_Q">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_0" PORT="BUTTON"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/button_0" HWVERSION="1.0" INSTANCE="button_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="button" VLNV="xilinx.com:module_ref:button:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/button_dn" HWVERSION="1.0" INSTANCE="button_dn" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="button" VLNV="xilinx.com:module_ref:button:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="C_ACTIVE" VALUE="1"/>
@@ -466,18 +431,44 @@
             <CONNECTION INSTANCE="External_Ports" PORT="BTND"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="Q" SIGIS="undef" SIGNAME="button_0_Q">
+        <PORT DIR="O" NAME="Q" SIGIS="undef" SIGNAME="button_dn_Q">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_b_0" PORT="BUTTON"/>
+            <CONNECTION INSTANCE="controller_b" PORT="BUTTON"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/controller_0" HWVERSION="1.0" INSTANCE="controller_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="controller" VLNV="xilinx.com:module_ref:controller:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/button_up" HWVERSION="1.0" INSTANCE="button_up" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="button" VLNV="xilinx.com:module_ref:button:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_controller_0_0"/>
+        <PARAMETER NAME="C_ACTIVE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_button_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK100MHZ">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK100MHZ"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="PIN" SIGIS="undef" SIGNAME="External_Ports_BTNU">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="BTNU"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="Q" SIGIS="undef" SIGNAME="button_up_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="controller_a" PORT="BUTTON"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/controller_a" HWVERSION="1.0" INSTANCE="controller_a" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="controller_a" VLNV="xilinx.com:module_ref:controller_a:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_controller_a_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -491,29 +482,29 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CPU_RESETN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BUTTON" SIGIS="undef" SIGNAME="btn_up_Q">
+        <PORT DIR="I" NAME="BUTTON" SIGIS="undef" SIGNAME="button_up_Q">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="btn_up" PORT="Q"/>
+            <CONNECTION INSTANCE="button_up" PORT="Q"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="543" NAME="FIFO_OUT" RIGHT="0" SIGIS="undef" SIGNAME="controller_0_FIFO_OUT">
+        <PORT DIR="O" LEFT="543" NAME="FIFO_OUT" RIGHT="0" SIGIS="undef" SIGNAME="controller_a_FIFO_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="FIFO_00_IN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="FIFO_FULL" SIGIS="undef" SIGNAME="controller_0_FIFO_FULL">
+        <PORT DIR="I" NAME="FIFO_FULL" SIGIS="undef" SIGNAME="controller_a_FIFO_FULL">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="FIFO_00_FULL"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="FIFO_WR_EN" SIGIS="undef" SIGNAME="controller_0_FIFO_WR_EN">
+        <PORT DIR="O" NAME="FIFO_WR_EN" SIGIS="undef" SIGNAME="controller_a_FIFO_WR_EN">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="FIFO_00_WR_EN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="controller_0_PRINTER" NAME="PRINTER" TYPE="INITIATOR" VLNV="xilinx.com:interface:fifo_write:1.0">
+        <BUSINTERFACE BUSNAME="controller_a_PRINTER" NAME="PRINTER" TYPE="INITIATOR" VLNV="xilinx.com:interface:fifo_write:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="WR_DATA" PHYSICAL="FIFO_OUT"/>
             <PORTMAP LOGICAL="WR_EN" PHYSICAL="FIFO_WR_EN"/>
@@ -522,7 +513,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/controller_b_0" HWVERSION="1.0" INSTANCE="controller_b_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="controller_b" VLNV="xilinx.com:module_ref:controller_b:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/controller_b" HWVERSION="1.0" INSTANCE="controller_b" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="controller_b" VLNV="xilinx.com:module_ref:controller_b:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_controller_b_0_0"/>
@@ -539,29 +530,29 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CPU_RESETN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BUTTON" SIGIS="undef" SIGNAME="button_0_Q">
+        <PORT DIR="I" NAME="BUTTON" SIGIS="undef" SIGNAME="button_dn_Q">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="button_0" PORT="Q"/>
+            <CONNECTION INSTANCE="button_dn" PORT="Q"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="543" NAME="FIFO_OUT" RIGHT="0" SIGIS="undef" SIGNAME="controller_b_0_FIFO_OUT">
+        <PORT DIR="O" LEFT="543" NAME="FIFO_OUT" RIGHT="0" SIGIS="undef" SIGNAME="controller_b_FIFO_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="FIFO_01_IN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="FIFO_FULL" SIGIS="undef" SIGNAME="controller_b_0_FIFO_FULL">
+        <PORT DIR="I" NAME="FIFO_FULL" SIGIS="undef" SIGNAME="controller_b_FIFO_FULL">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="FIFO_01_FULL"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="FIFO_WR_EN" SIGIS="undef" SIGNAME="controller_b_0_FIFO_WR_EN">
+        <PORT DIR="O" NAME="FIFO_WR_EN" SIGIS="undef" SIGNAME="controller_b_FIFO_WR_EN">
           <CONNECTIONS>
             <CONNECTION INSTANCE="printer" PORT="FIFO_01_WR_EN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="controller_b_0_PRINTER" NAME="PRINTER" TYPE="INITIATOR" VLNV="xilinx.com:interface:fifo_write:1.0">
+        <BUSINTERFACE BUSNAME="controller_b_PRINTER" NAME="PRINTER" TYPE="INITIATOR" VLNV="xilinx.com:interface:fifo_write:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="WR_DATA" PHYSICAL="FIFO_OUT"/>
             <PORTMAP LOGICAL="WR_EN" PHYSICAL="FIFO_WR_EN"/>
@@ -579,34 +570,34 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="543" NAME="FIFO_00_IN" RIGHT="0" SIGIS="undef" SIGNAME="controller_0_FIFO_OUT">
+        <PORT DIR="I" LEFT="543" NAME="FIFO_00_IN" RIGHT="0" SIGIS="undef" SIGNAME="controller_a_FIFO_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_0" PORT="FIFO_OUT"/>
+            <CONNECTION INSTANCE="controller_a" PORT="FIFO_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="FIFO_00_FULL" SIGIS="undef" SIGNAME="controller_0_FIFO_FULL">
+        <PORT DIR="O" NAME="FIFO_00_FULL" SIGIS="undef" SIGNAME="controller_a_FIFO_FULL">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_0" PORT="FIFO_FULL"/>
+            <CONNECTION INSTANCE="controller_a" PORT="FIFO_FULL"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="FIFO_00_WR_EN" SIGIS="undef" SIGNAME="controller_0_FIFO_WR_EN">
+        <PORT DIR="I" NAME="FIFO_00_WR_EN" SIGIS="undef" SIGNAME="controller_a_FIFO_WR_EN">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_0" PORT="FIFO_WR_EN"/>
+            <CONNECTION INSTANCE="controller_a" PORT="FIFO_WR_EN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="543" NAME="FIFO_01_IN" RIGHT="0" SIGIS="undef" SIGNAME="controller_b_0_FIFO_OUT">
+        <PORT DIR="I" LEFT="543" NAME="FIFO_01_IN" RIGHT="0" SIGIS="undef" SIGNAME="controller_b_FIFO_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_b_0" PORT="FIFO_OUT"/>
+            <CONNECTION INSTANCE="controller_b" PORT="FIFO_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="FIFO_01_FULL" SIGIS="undef" SIGNAME="controller_b_0_FIFO_FULL">
+        <PORT DIR="O" NAME="FIFO_01_FULL" SIGIS="undef" SIGNAME="controller_b_FIFO_FULL">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_b_0" PORT="FIFO_FULL"/>
+            <CONNECTION INSTANCE="controller_b" PORT="FIFO_FULL"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="FIFO_01_WR_EN" SIGIS="undef" SIGNAME="controller_b_0_FIFO_WR_EN">
+        <PORT DIR="I" NAME="FIFO_01_WR_EN" SIGIS="undef" SIGNAME="controller_b_FIFO_WR_EN">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="controller_b_0" PORT="FIFO_WR_EN"/>
+            <CONNECTION INSTANCE="controller_b" PORT="FIFO_WR_EN"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK100MHZ">
@@ -621,12 +612,12 @@
         </PORT>
         <PORT DIR="O" NAME="CLK_OUT" SIGIS="undef" SIGNAME="printer_CLK_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="RESETN_OUT" SIGIS="undef" SIGNAME="printer_RESETN_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="LED" RIGHT="0" SIGIS="undef" SIGNAME="printer_LED">
@@ -639,103 +630,103 @@
             <CONNECTION INSTANCE="External_Ports" PORT="LED16_B"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M_AXI_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M_AXI_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M_AXI_AWVALID" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_awvalid">
+        <PORT DIR="O" NAME="M_AXI_AWVALID" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M_AXI_AWREADY" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_awready">
+        <PORT DIR="I" NAME="M_AXI_AWREADY" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="M_AXI_AWPROT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="M_AXI_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M_AXI_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M_AXI_WVALID" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wvalid">
+        <PORT DIR="O" NAME="M_AXI_WVALID" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M_AXI_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M_AXI_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M_AXI_WREADY" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_wready">
+        <PORT DIR="I" NAME="M_AXI_WREADY" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M_AXI_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M_AXI_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M_AXI_BVALID" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_bvalid">
+        <PORT DIR="I" NAME="M_AXI_BVALID" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M_AXI_BREADY" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_bready">
+        <PORT DIR="O" NAME="M_AXI_BREADY" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M_AXI_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M_AXI_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M_AXI_ARVALID" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_arvalid">
+        <PORT DIR="O" NAME="M_AXI_ARVALID" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="M_AXI_ARPROT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M_AXI_ARREADY" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_arready">
+        <PORT DIR="I" NAME="M_AXI_ARREADY" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M_AXI_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M_AXI_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M_AXI_RVALID" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rvalid">
+        <PORT DIR="I" NAME="M_AXI_RVALID" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M_AXI_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M_AXI_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M_AXI_RREADY" SIGIS="undef" SIGNAME="axi_uartlite_0_s_axi_rready">
+        <PORT DIR="O" NAME="M_AXI_RREADY" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="controller_0_PRINTER" NAME="FIFO_00_WRITE" TYPE="TARGET" VLNV="xilinx.com:interface:fifo_write:1.0">
+        <BUSINTERFACE BUSNAME="controller_a_PRINTER" NAME="FIFO_00_WRITE" TYPE="TARGET" VLNV="xilinx.com:interface:fifo_write:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="WR_DATA" PHYSICAL="FIFO_00_IN"/>
             <PORTMAP LOGICAL="WR_EN" PHYSICAL="FIFO_00_WR_EN"/>
             <PORTMAP LOGICAL="FULL" PHYSICAL="FIFO_00_FULL"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="controller_b_0_PRINTER" NAME="FIFO_01_WRITE" TYPE="TARGET" VLNV="xilinx.com:interface:fifo_write:1.0">
+        <BUSINTERFACE BUSNAME="controller_b_PRINTER" NAME="FIFO_01_WRITE" TYPE="TARGET" VLNV="xilinx.com:interface:fifo_write:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="WR_DATA" PHYSICAL="FIFO_01_IN"/>
             <PORTMAP LOGICAL="WR_EN" PHYSICAL="FIFO_01_WR_EN"/>
@@ -798,10 +789,10 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x40600000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x4060FFFF" INSTANCE="axi_uartlite_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x40600000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x4060FFFF" INSTANCE="axi_uartlite" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
       </MEMORYMAP>
       <PERIPHERALS>
-        <PERIPHERAL INSTANCE="axi_uartlite_0"/>
+        <PERIPHERAL INSTANCE="axi_uartlite"/>
       </PERIPHERALS>
     </MODULE>
   </MODULES>

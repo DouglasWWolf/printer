@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Thu Apr 21 18:56:35 2022
+// Date        : Fri Apr 22 16:35:29 2022
 // Host        : DESKTOP-06LMOH5 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/fpga/printer/printer.gen/sources_1/bd/design_1/ip/design_1_printer_0_1/design_1_printer_0_1_sim_netlist.v

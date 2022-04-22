@@ -1,11 +1,11 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Fri Apr 22 15:56:02 2022
+-- Date        : Fri Apr 22 16:33:28 2022
 -- Host        : DESKTOP-06LMOH5 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/fpga/printer/printer.gen/sources_1/bd/design_1/ip/design_1_controller_0_0/design_1_controller_0_0_sim_netlist.vhdl
--- Design      : design_1_controller_0_0
+--               c:/fpga/printer/printer.gen/sources_1/bd/design_1/ip/design_1_controller_a_0_0/design_1_controller_a_0_0_sim_netlist.vhdl
+-- Design      : design_1_controller_a_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a100tcsg324-1
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity design_1_controller_0_0_controller is
+entity design_1_controller_a_0_0_controller_a is
   port (
     FIFO_WR_EN : out STD_LOGIC;
     FIFO_OUT : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -23,20 +23,20 @@ entity design_1_controller_0_0_controller is
     RESETN : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_controller_0_0_controller : entity is "controller";
-end design_1_controller_0_0_controller;
+  attribute ORIG_REF_NAME of design_1_controller_a_0_0_controller_a : entity is "controller_a";
+end design_1_controller_a_0_0_controller_a;
 
-architecture STRUCTURE of design_1_controller_0_0_controller is
+architecture STRUCTURE of design_1_controller_a_0_0_controller_a is
   signal \^fifo_out\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \fifo_out[150]_i_1_n_0\ : STD_LOGIC;
+  signal \fifo_out[254]_i_1_n_0\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of \fifo_out_reg[150]\ : label is "xilinx.com:interface:fifo_write:1.0 PRINTER WR_DATA";
+  attribute X_INTERFACE_INFO of \fifo_out_reg[254]\ : label is "xilinx.com:interface:fifo_write:1.0 PRINTER WR_DATA";
   attribute X_INTERFACE_MODE : string;
-  attribute X_INTERFACE_MODE of \fifo_out_reg[150]\ : label is "master";
+  attribute X_INTERFACE_MODE of \fifo_out_reg[254]\ : label is "master";
   attribute X_INTERFACE_INFO of fifo_wr_en_reg : label is "xilinx.com:interface:fifo_write:1.0 PRINTER WR_EN";
 begin
   FIFO_OUT(0) <= \^fifo_out\(0);
-\fifo_out[150]_i_1\: unisim.vcomponents.LUT3
+\fifo_out[254]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"F8"
     )
@@ -44,13 +44,13 @@ begin
       I0 => \^fifo_out\(0),
       I1 => RESETN,
       I2 => BUTTON,
-      O => \fifo_out[150]_i_1_n_0\
+      O => \fifo_out[254]_i_1_n_0\
     );
-\fifo_out_reg[150]\: unisim.vcomponents.FDRE
+\fifo_out_reg[254]\: unisim.vcomponents.FDRE
      port map (
       C => CLK,
       CE => '1',
-      D => \fifo_out[150]_i_1_n_0\,
+      D => \fifo_out[254]_i_1_n_0\,
       Q => \^fifo_out\(0),
       R => '0'
     );
@@ -67,7 +67,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity design_1_controller_0_0 is
+entity design_1_controller_a_0_0 is
   port (
     CLK : in STD_LOGIC;
     RESETN : in STD_LOGIC;
@@ -77,20 +77,20 @@ entity design_1_controller_0_0 is
     FIFO_WR_EN : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of design_1_controller_0_0 : entity is true;
+  attribute NotValidForBitStream of design_1_controller_a_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of design_1_controller_0_0 : entity is "design_1_controller_0_0,controller,{}";
+  attribute CHECK_LICENSE_TYPE of design_1_controller_a_0_0 : entity is "design_1_controller_a_0_0,controller_a,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of design_1_controller_0_0 : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of design_1_controller_a_0_0 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;
-  attribute IP_DEFINITION_SOURCE of design_1_controller_0_0 : entity is "module_ref";
+  attribute IP_DEFINITION_SOURCE of design_1_controller_a_0_0 : entity is "module_ref";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of design_1_controller_0_0 : entity is "controller,Vivado 2021.2";
-end design_1_controller_0_0;
+  attribute X_CORE_INFO of design_1_controller_a_0_0 : entity is "controller_a,Vivado 2021.2";
+end design_1_controller_a_0_0;
 
-architecture STRUCTURE of design_1_controller_0_0 is
+architecture STRUCTURE of design_1_controller_a_0_0 is
   signal \<const0>\ : STD_LOGIC;
-  signal \^fifo_out\ : STD_LOGIC_VECTOR ( 148 to 148 );
+  signal \^fifo_out\ : STD_LOGIC_VECTOR ( 251 to 251 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of CLK : signal is "xilinx.com:signal:clock:1.0 CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -390,228 +390,228 @@ begin
   FIFO_OUT(257) <= \<const0>\;
   FIFO_OUT(256) <= \<const0>\;
   FIFO_OUT(255) <= \<const0>\;
-  FIFO_OUT(254) <= \<const0>\;
+  FIFO_OUT(254) <= \^fifo_out\(251);
   FIFO_OUT(253) <= \<const0>\;
   FIFO_OUT(252) <= \<const0>\;
-  FIFO_OUT(251) <= \<const0>\;
+  FIFO_OUT(251) <= \^fifo_out\(251);
   FIFO_OUT(250) <= \<const0>\;
   FIFO_OUT(249) <= \<const0>\;
   FIFO_OUT(248) <= \<const0>\;
   FIFO_OUT(247) <= \<const0>\;
-  FIFO_OUT(246) <= \<const0>\;
-  FIFO_OUT(245) <= \<const0>\;
+  FIFO_OUT(246) <= \^fifo_out\(251);
+  FIFO_OUT(245) <= \^fifo_out\(251);
   FIFO_OUT(244) <= \<const0>\;
   FIFO_OUT(243) <= \<const0>\;
-  FIFO_OUT(242) <= \<const0>\;
+  FIFO_OUT(242) <= \^fifo_out\(251);
   FIFO_OUT(241) <= \<const0>\;
-  FIFO_OUT(240) <= \<const0>\;
+  FIFO_OUT(240) <= \^fifo_out\(251);
   FIFO_OUT(239) <= \<const0>\;
-  FIFO_OUT(238) <= \<const0>\;
-  FIFO_OUT(237) <= \<const0>\;
+  FIFO_OUT(238) <= \^fifo_out\(251);
+  FIFO_OUT(237) <= \^fifo_out\(251);
   FIFO_OUT(236) <= \<const0>\;
-  FIFO_OUT(235) <= \<const0>\;
-  FIFO_OUT(234) <= \<const0>\;
+  FIFO_OUT(235) <= \^fifo_out\(251);
+  FIFO_OUT(234) <= \^fifo_out\(251);
   FIFO_OUT(233) <= \<const0>\;
   FIFO_OUT(232) <= \<const0>\;
   FIFO_OUT(231) <= \<const0>\;
-  FIFO_OUT(230) <= \<const0>\;
-  FIFO_OUT(229) <= \<const0>\;
+  FIFO_OUT(230) <= \^fifo_out\(251);
+  FIFO_OUT(229) <= \^fifo_out\(251);
   FIFO_OUT(228) <= \<const0>\;
-  FIFO_OUT(227) <= \<const0>\;
-  FIFO_OUT(226) <= \<const0>\;
+  FIFO_OUT(227) <= \^fifo_out\(251);
+  FIFO_OUT(226) <= \^fifo_out\(251);
   FIFO_OUT(225) <= \<const0>\;
   FIFO_OUT(224) <= \<const0>\;
   FIFO_OUT(223) <= \<const0>\;
-  FIFO_OUT(222) <= \<const0>\;
-  FIFO_OUT(221) <= \<const0>\;
+  FIFO_OUT(222) <= \^fifo_out\(251);
+  FIFO_OUT(221) <= \^fifo_out\(251);
   FIFO_OUT(220) <= \<const0>\;
-  FIFO_OUT(219) <= \<const0>\;
-  FIFO_OUT(218) <= \<const0>\;
-  FIFO_OUT(217) <= \<const0>\;
-  FIFO_OUT(216) <= \<const0>\;
+  FIFO_OUT(219) <= \^fifo_out\(251);
+  FIFO_OUT(218) <= \^fifo_out\(251);
+  FIFO_OUT(217) <= \^fifo_out\(251);
+  FIFO_OUT(216) <= \^fifo_out\(251);
   FIFO_OUT(215) <= \<const0>\;
   FIFO_OUT(214) <= \<const0>\;
-  FIFO_OUT(213) <= \<const0>\;
+  FIFO_OUT(213) <= \^fifo_out\(251);
   FIFO_OUT(212) <= \<const0>\;
   FIFO_OUT(211) <= \<const0>\;
   FIFO_OUT(210) <= \<const0>\;
   FIFO_OUT(209) <= \<const0>\;
   FIFO_OUT(208) <= \<const0>\;
   FIFO_OUT(207) <= \<const0>\;
-  FIFO_OUT(206) <= \<const0>\;
-  FIFO_OUT(205) <= \<const0>\;
-  FIFO_OUT(204) <= \<const0>\;
+  FIFO_OUT(206) <= \^fifo_out\(251);
+  FIFO_OUT(205) <= \^fifo_out\(251);
+  FIFO_OUT(204) <= \^fifo_out\(251);
   FIFO_OUT(203) <= \<const0>\;
-  FIFO_OUT(202) <= \<const0>\;
-  FIFO_OUT(201) <= \<const0>\;
-  FIFO_OUT(200) <= \<const0>\;
+  FIFO_OUT(202) <= \^fifo_out\(251);
+  FIFO_OUT(201) <= \^fifo_out\(251);
+  FIFO_OUT(200) <= \^fifo_out\(251);
   FIFO_OUT(199) <= \<const0>\;
-  FIFO_OUT(198) <= \<const0>\;
-  FIFO_OUT(197) <= \<const0>\;
+  FIFO_OUT(198) <= \^fifo_out\(251);
+  FIFO_OUT(197) <= \^fifo_out\(251);
   FIFO_OUT(196) <= \<const0>\;
-  FIFO_OUT(195) <= \<const0>\;
-  FIFO_OUT(194) <= \<const0>\;
-  FIFO_OUT(193) <= \<const0>\;
-  FIFO_OUT(192) <= \<const0>\;
+  FIFO_OUT(195) <= \^fifo_out\(251);
+  FIFO_OUT(194) <= \^fifo_out\(251);
+  FIFO_OUT(193) <= \^fifo_out\(251);
+  FIFO_OUT(192) <= \^fifo_out\(251);
   FIFO_OUT(191) <= \<const0>\;
-  FIFO_OUT(190) <= \<const0>\;
-  FIFO_OUT(189) <= \<const0>\;
-  FIFO_OUT(188) <= \<const0>\;
+  FIFO_OUT(190) <= \^fifo_out\(251);
+  FIFO_OUT(189) <= \^fifo_out\(251);
+  FIFO_OUT(188) <= \^fifo_out\(251);
   FIFO_OUT(187) <= \<const0>\;
   FIFO_OUT(186) <= \<const0>\;
-  FIFO_OUT(185) <= \<const0>\;
+  FIFO_OUT(185) <= \^fifo_out\(251);
   FIFO_OUT(184) <= \<const0>\;
   FIFO_OUT(183) <= \<const0>\;
-  FIFO_OUT(182) <= \<const0>\;
-  FIFO_OUT(181) <= \<const0>\;
+  FIFO_OUT(182) <= \^fifo_out\(251);
+  FIFO_OUT(181) <= \^fifo_out\(251);
   FIFO_OUT(180) <= \<const0>\;
-  FIFO_OUT(179) <= \<const0>\;
-  FIFO_OUT(178) <= \<const0>\;
+  FIFO_OUT(179) <= \^fifo_out\(251);
+  FIFO_OUT(178) <= \^fifo_out\(251);
   FIFO_OUT(177) <= \<const0>\;
   FIFO_OUT(176) <= \<const0>\;
   FIFO_OUT(175) <= \<const0>\;
-  FIFO_OUT(174) <= \<const0>\;
-  FIFO_OUT(173) <= \<const0>\;
+  FIFO_OUT(174) <= \^fifo_out\(251);
+  FIFO_OUT(173) <= \^fifo_out\(251);
   FIFO_OUT(172) <= \<const0>\;
   FIFO_OUT(171) <= \<const0>\;
-  FIFO_OUT(170) <= \<const0>\;
+  FIFO_OUT(170) <= \^fifo_out\(251);
   FIFO_OUT(169) <= \<const0>\;
   FIFO_OUT(168) <= \<const0>\;
   FIFO_OUT(167) <= \<const0>\;
   FIFO_OUT(166) <= \<const0>\;
-  FIFO_OUT(165) <= \<const0>\;
+  FIFO_OUT(165) <= \^fifo_out\(251);
   FIFO_OUT(164) <= \<const0>\;
   FIFO_OUT(163) <= \<const0>\;
   FIFO_OUT(162) <= \<const0>\;
   FIFO_OUT(161) <= \<const0>\;
   FIFO_OUT(160) <= \<const0>\;
   FIFO_OUT(159) <= \<const0>\;
-  FIFO_OUT(158) <= \<const0>\;
-  FIFO_OUT(157) <= \<const0>\;
+  FIFO_OUT(158) <= \^fifo_out\(251);
+  FIFO_OUT(157) <= \^fifo_out\(251);
   FIFO_OUT(156) <= \<const0>\;
   FIFO_OUT(155) <= \<const0>\;
-  FIFO_OUT(154) <= \<const0>\;
-  FIFO_OUT(153) <= \<const0>\;
+  FIFO_OUT(154) <= \^fifo_out\(251);
+  FIFO_OUT(153) <= \^fifo_out\(251);
   FIFO_OUT(152) <= \<const0>\;
   FIFO_OUT(151) <= \<const0>\;
-  FIFO_OUT(150) <= \^fifo_out\(148);
-  FIFO_OUT(149) <= \<const0>\;
-  FIFO_OUT(148) <= \^fifo_out\(148);
+  FIFO_OUT(150) <= \^fifo_out\(251);
+  FIFO_OUT(149) <= \^fifo_out\(251);
+  FIFO_OUT(148) <= \^fifo_out\(251);
   FIFO_OUT(147) <= \<const0>\;
   FIFO_OUT(146) <= \<const0>\;
-  FIFO_OUT(145) <= \^fifo_out\(148);
-  FIFO_OUT(144) <= \^fifo_out\(148);
+  FIFO_OUT(145) <= \^fifo_out\(251);
+  FIFO_OUT(144) <= \<const0>\;
   FIFO_OUT(143) <= \<const0>\;
-  FIFO_OUT(142) <= \^fifo_out\(148);
-  FIFO_OUT(141) <= \^fifo_out\(148);
+  FIFO_OUT(142) <= \^fifo_out\(251);
+  FIFO_OUT(141) <= \^fifo_out\(251);
   FIFO_OUT(140) <= \<const0>\;
-  FIFO_OUT(139) <= \^fifo_out\(148);
-  FIFO_OUT(138) <= \<const0>\;
-  FIFO_OUT(137) <= \<const0>\;
-  FIFO_OUT(136) <= \<const0>\;
+  FIFO_OUT(139) <= \^fifo_out\(251);
+  FIFO_OUT(138) <= \^fifo_out\(251);
+  FIFO_OUT(137) <= \^fifo_out\(251);
+  FIFO_OUT(136) <= \^fifo_out\(251);
   FIFO_OUT(135) <= \<const0>\;
-  FIFO_OUT(134) <= \^fifo_out\(148);
-  FIFO_OUT(133) <= \^fifo_out\(148);
+  FIFO_OUT(134) <= \^fifo_out\(251);
+  FIFO_OUT(133) <= \^fifo_out\(251);
   FIFO_OUT(132) <= \<const0>\;
-  FIFO_OUT(131) <= \<const0>\;
-  FIFO_OUT(130) <= \^fifo_out\(148);
+  FIFO_OUT(131) <= \^fifo_out\(251);
+  FIFO_OUT(130) <= \^fifo_out\(251);
   FIFO_OUT(129) <= \<const0>\;
-  FIFO_OUT(128) <= \^fifo_out\(148);
+  FIFO_OUT(128) <= \^fifo_out\(251);
   FIFO_OUT(127) <= \<const0>\;
-  FIFO_OUT(126) <= \^fifo_out\(148);
-  FIFO_OUT(125) <= \^fifo_out\(148);
-  FIFO_OUT(124) <= \^fifo_out\(148);
+  FIFO_OUT(126) <= \<const0>\;
+  FIFO_OUT(125) <= \^fifo_out\(251);
+  FIFO_OUT(124) <= \<const0>\;
   FIFO_OUT(123) <= \<const0>\;
   FIFO_OUT(122) <= \<const0>\;
-  FIFO_OUT(121) <= \^fifo_out\(148);
+  FIFO_OUT(121) <= \<const0>\;
   FIFO_OUT(120) <= \<const0>\;
   FIFO_OUT(119) <= \<const0>\;
-  FIFO_OUT(118) <= \^fifo_out\(148);
-  FIFO_OUT(117) <= \^fifo_out\(148);
-  FIFO_OUT(116) <= \<const0>\;
-  FIFO_OUT(115) <= \^fifo_out\(148);
-  FIFO_OUT(114) <= \<const0>\;
+  FIFO_OUT(118) <= \^fifo_out\(251);
+  FIFO_OUT(117) <= \^fifo_out\(251);
+  FIFO_OUT(116) <= \^fifo_out\(251);
+  FIFO_OUT(115) <= \<const0>\;
+  FIFO_OUT(114) <= \^fifo_out\(251);
   FIFO_OUT(113) <= \<const0>\;
-  FIFO_OUT(112) <= \^fifo_out\(148);
+  FIFO_OUT(112) <= \<const0>\;
   FIFO_OUT(111) <= \<const0>\;
-  FIFO_OUT(110) <= \<const0>\;
-  FIFO_OUT(109) <= \^fifo_out\(148);
-  FIFO_OUT(108) <= \^fifo_out\(148);
-  FIFO_OUT(107) <= \^fifo_out\(148);
+  FIFO_OUT(110) <= \^fifo_out\(251);
+  FIFO_OUT(109) <= \^fifo_out\(251);
+  FIFO_OUT(108) <= \<const0>\;
+  FIFO_OUT(107) <= \^fifo_out\(251);
   FIFO_OUT(106) <= \<const0>\;
-  FIFO_OUT(105) <= \^fifo_out\(148);
+  FIFO_OUT(105) <= \<const0>\;
   FIFO_OUT(104) <= \<const0>\;
   FIFO_OUT(103) <= \<const0>\;
-  FIFO_OUT(102) <= \<const0>\;
-  FIFO_OUT(101) <= \^fifo_out\(148);
+  FIFO_OUT(102) <= \^fifo_out\(251);
+  FIFO_OUT(101) <= \^fifo_out\(251);
   FIFO_OUT(100) <= \<const0>\;
   FIFO_OUT(99) <= \<const0>\;
-  FIFO_OUT(98) <= \<const0>\;
+  FIFO_OUT(98) <= \^fifo_out\(251);
   FIFO_OUT(97) <= \<const0>\;
-  FIFO_OUT(96) <= \<const0>\;
+  FIFO_OUT(96) <= \^fifo_out\(251);
   FIFO_OUT(95) <= \<const0>\;
   FIFO_OUT(94) <= \<const0>\;
-  FIFO_OUT(93) <= \<const0>\;
+  FIFO_OUT(93) <= \^fifo_out\(251);
   FIFO_OUT(92) <= \<const0>\;
   FIFO_OUT(91) <= \<const0>\;
   FIFO_OUT(90) <= \<const0>\;
   FIFO_OUT(89) <= \<const0>\;
   FIFO_OUT(88) <= \<const0>\;
   FIFO_OUT(87) <= \<const0>\;
-  FIFO_OUT(86) <= \<const0>\;
+  FIFO_OUT(86) <= \^fifo_out\(251);
   FIFO_OUT(85) <= \<const0>\;
   FIFO_OUT(84) <= \<const0>\;
   FIFO_OUT(83) <= \<const0>\;
-  FIFO_OUT(82) <= \<const0>\;
-  FIFO_OUT(81) <= \<const0>\;
+  FIFO_OUT(82) <= \^fifo_out\(251);
+  FIFO_OUT(81) <= \^fifo_out\(251);
   FIFO_OUT(80) <= \<const0>\;
   FIFO_OUT(79) <= \<const0>\;
-  FIFO_OUT(78) <= \<const0>\;
+  FIFO_OUT(78) <= \^fifo_out\(251);
   FIFO_OUT(77) <= \<const0>\;
-  FIFO_OUT(76) <= \<const0>\;
+  FIFO_OUT(76) <= \^fifo_out\(251);
   FIFO_OUT(75) <= \<const0>\;
   FIFO_OUT(74) <= \<const0>\;
   FIFO_OUT(73) <= \<const0>\;
   FIFO_OUT(72) <= \<const0>\;
   FIFO_OUT(71) <= \<const0>\;
-  FIFO_OUT(70) <= \<const0>\;
+  FIFO_OUT(70) <= \^fifo_out\(251);
   FIFO_OUT(69) <= \<const0>\;
   FIFO_OUT(68) <= \<const0>\;
   FIFO_OUT(67) <= \<const0>\;
-  FIFO_OUT(66) <= \<const0>\;
-  FIFO_OUT(65) <= \<const0>\;
-  FIFO_OUT(64) <= \<const0>\;
+  FIFO_OUT(66) <= \^fifo_out\(251);
+  FIFO_OUT(65) <= \^fifo_out\(251);
+  FIFO_OUT(64) <= \^fifo_out\(251);
   FIFO_OUT(63) <= \<const0>\;
-  FIFO_OUT(62) <= \<const0>\;
+  FIFO_OUT(62) <= \^fifo_out\(251);
   FIFO_OUT(61) <= \<const0>\;
   FIFO_OUT(60) <= \<const0>\;
   FIFO_OUT(59) <= \<const0>\;
   FIFO_OUT(58) <= \<const0>\;
   FIFO_OUT(57) <= \<const0>\;
-  FIFO_OUT(56) <= \<const0>\;
-  FIFO_OUT(55) <= \^fifo_out\(148);
+  FIFO_OUT(56) <= \^fifo_out\(251);
+  FIFO_OUT(55) <= \<const0>\;
   FIFO_OUT(54) <= \<const0>\;
-  FIFO_OUT(53) <= \^fifo_out\(148);
-  FIFO_OUT(52) <= \^fifo_out\(148);
-  FIFO_OUT(51) <= \^fifo_out\(148);
-  FIFO_OUT(50) <= \^fifo_out\(148);
+  FIFO_OUT(53) <= \^fifo_out\(251);
+  FIFO_OUT(52) <= \<const0>\;
+  FIFO_OUT(51) <= \<const0>\;
+  FIFO_OUT(50) <= \<const0>\;
   FIFO_OUT(49) <= \<const0>\;
-  FIFO_OUT(48) <= \<const0>\;
+  FIFO_OUT(48) <= \^fifo_out\(251);
   FIFO_OUT(47) <= \<const0>\;
-  FIFO_OUT(46) <= \^fifo_out\(148);
-  FIFO_OUT(45) <= \^fifo_out\(148);
+  FIFO_OUT(46) <= \<const0>\;
+  FIFO_OUT(45) <= \<const0>\;
   FIFO_OUT(44) <= \<const0>\;
-  FIFO_OUT(43) <= \<const0>\;
-  FIFO_OUT(42) <= \<const0>\;
+  FIFO_OUT(43) <= \^fifo_out\(251);
+  FIFO_OUT(42) <= \^fifo_out\(251);
   FIFO_OUT(41) <= \<const0>\;
-  FIFO_OUT(40) <= \^fifo_out\(148);
+  FIFO_OUT(40) <= \^fifo_out\(251);
   FIFO_OUT(39) <= \<const0>\;
-  FIFO_OUT(38) <= \^fifo_out\(148);
+  FIFO_OUT(38) <= \<const0>\;
   FIFO_OUT(37) <= \<const0>\;
   FIFO_OUT(36) <= \<const0>\;
-  FIFO_OUT(35) <= \^fifo_out\(148);
-  FIFO_OUT(34) <= \^fifo_out\(148);
-  FIFO_OUT(33) <= \^fifo_out\(148);
+  FIFO_OUT(35) <= \^fifo_out\(251);
+  FIFO_OUT(34) <= \<const0>\;
+  FIFO_OUT(33) <= \^fifo_out\(251);
   FIFO_OUT(32) <= \<const0>\;
   FIFO_OUT(31) <= \<const0>\;
   FIFO_OUT(30) <= \<const0>\;
@@ -629,10 +629,10 @@ begin
   FIFO_OUT(18) <= \<const0>\;
   FIFO_OUT(17) <= \<const0>\;
   FIFO_OUT(16) <= \<const0>\;
-  FIFO_OUT(15) <= \^fifo_out\(148);
+  FIFO_OUT(15) <= \<const0>\;
   FIFO_OUT(14) <= \<const0>\;
-  FIFO_OUT(13) <= \^fifo_out\(148);
-  FIFO_OUT(12) <= \^fifo_out\(148);
+  FIFO_OUT(13) <= \<const0>\;
+  FIFO_OUT(12) <= \<const0>\;
   FIFO_OUT(11) <= \<const0>\;
   FIFO_OUT(10) <= \<const0>\;
   FIFO_OUT(9) <= \<const0>\;
@@ -649,11 +649,11 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-inst: entity work.design_1_controller_0_0_controller
+inst: entity work.design_1_controller_a_0_0_controller_a
      port map (
       BUTTON => BUTTON,
       CLK => CLK,
-      FIFO_OUT(0) => \^fifo_out\(148),
+      FIFO_OUT(0) => \^fifo_out\(251),
       FIFO_WR_EN => FIFO_WR_EN,
       RESETN => RESETN
     );

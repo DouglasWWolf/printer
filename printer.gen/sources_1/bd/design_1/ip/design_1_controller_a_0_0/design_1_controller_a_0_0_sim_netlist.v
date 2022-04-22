@@ -1,21 +1,21 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Fri Apr 22 15:56:02 2022
+// Date        : Fri Apr 22 16:33:28 2022
 // Host        : DESKTOP-06LMOH5 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/fpga/printer/printer.gen/sources_1/bd/design_1/ip/design_1_controller_0_0/design_1_controller_0_0_sim_netlist.v
-// Design      : design_1_controller_0_0
+//               c:/fpga/printer/printer.gen/sources_1/bd/design_1/ip/design_1_controller_a_0_0/design_1_controller_a_0_0_sim_netlist.v
+// Design      : design_1_controller_a_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a100tcsg324-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "design_1_controller_0_0,controller,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "controller,Vivado 2021.2" *) 
+(* CHECK_LICENSE_TYPE = "design_1_controller_a_0_0,controller_a,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "controller_a,Vivado 2021.2" *) 
 (* NotValidForBitStream *)
-module design_1_controller_0_0
+module design_1_controller_a_0_0
    (CLK,
     RESETN,
     BUTTON,
@@ -32,7 +32,7 @@ module design_1_controller_0_0
   wire \<const0> ;
   wire BUTTON;
   wire CLK;
-  wire [148:148]\^FIFO_OUT ;
+  wire [251:251]\^FIFO_OUT ;
   wire FIFO_WR_EN;
   wire RESETN;
 
@@ -325,228 +325,228 @@ module design_1_controller_0_0
   assign FIFO_OUT[257] = \<const0> ;
   assign FIFO_OUT[256] = \<const0> ;
   assign FIFO_OUT[255] = \<const0> ;
-  assign FIFO_OUT[254] = \<const0> ;
+  assign FIFO_OUT[254] = \^FIFO_OUT [251];
   assign FIFO_OUT[253] = \<const0> ;
   assign FIFO_OUT[252] = \<const0> ;
-  assign FIFO_OUT[251] = \<const0> ;
+  assign FIFO_OUT[251] = \^FIFO_OUT [251];
   assign FIFO_OUT[250] = \<const0> ;
   assign FIFO_OUT[249] = \<const0> ;
   assign FIFO_OUT[248] = \<const0> ;
   assign FIFO_OUT[247] = \<const0> ;
-  assign FIFO_OUT[246] = \<const0> ;
-  assign FIFO_OUT[245] = \<const0> ;
+  assign FIFO_OUT[246] = \^FIFO_OUT [251];
+  assign FIFO_OUT[245] = \^FIFO_OUT [251];
   assign FIFO_OUT[244] = \<const0> ;
   assign FIFO_OUT[243] = \<const0> ;
-  assign FIFO_OUT[242] = \<const0> ;
+  assign FIFO_OUT[242] = \^FIFO_OUT [251];
   assign FIFO_OUT[241] = \<const0> ;
-  assign FIFO_OUT[240] = \<const0> ;
+  assign FIFO_OUT[240] = \^FIFO_OUT [251];
   assign FIFO_OUT[239] = \<const0> ;
-  assign FIFO_OUT[238] = \<const0> ;
-  assign FIFO_OUT[237] = \<const0> ;
+  assign FIFO_OUT[238] = \^FIFO_OUT [251];
+  assign FIFO_OUT[237] = \^FIFO_OUT [251];
   assign FIFO_OUT[236] = \<const0> ;
-  assign FIFO_OUT[235] = \<const0> ;
-  assign FIFO_OUT[234] = \<const0> ;
+  assign FIFO_OUT[235] = \^FIFO_OUT [251];
+  assign FIFO_OUT[234] = \^FIFO_OUT [251];
   assign FIFO_OUT[233] = \<const0> ;
   assign FIFO_OUT[232] = \<const0> ;
   assign FIFO_OUT[231] = \<const0> ;
-  assign FIFO_OUT[230] = \<const0> ;
-  assign FIFO_OUT[229] = \<const0> ;
+  assign FIFO_OUT[230] = \^FIFO_OUT [251];
+  assign FIFO_OUT[229] = \^FIFO_OUT [251];
   assign FIFO_OUT[228] = \<const0> ;
-  assign FIFO_OUT[227] = \<const0> ;
-  assign FIFO_OUT[226] = \<const0> ;
+  assign FIFO_OUT[227] = \^FIFO_OUT [251];
+  assign FIFO_OUT[226] = \^FIFO_OUT [251];
   assign FIFO_OUT[225] = \<const0> ;
   assign FIFO_OUT[224] = \<const0> ;
   assign FIFO_OUT[223] = \<const0> ;
-  assign FIFO_OUT[222] = \<const0> ;
-  assign FIFO_OUT[221] = \<const0> ;
+  assign FIFO_OUT[222] = \^FIFO_OUT [251];
+  assign FIFO_OUT[221] = \^FIFO_OUT [251];
   assign FIFO_OUT[220] = \<const0> ;
-  assign FIFO_OUT[219] = \<const0> ;
-  assign FIFO_OUT[218] = \<const0> ;
-  assign FIFO_OUT[217] = \<const0> ;
-  assign FIFO_OUT[216] = \<const0> ;
+  assign FIFO_OUT[219] = \^FIFO_OUT [251];
+  assign FIFO_OUT[218] = \^FIFO_OUT [251];
+  assign FIFO_OUT[217] = \^FIFO_OUT [251];
+  assign FIFO_OUT[216] = \^FIFO_OUT [251];
   assign FIFO_OUT[215] = \<const0> ;
   assign FIFO_OUT[214] = \<const0> ;
-  assign FIFO_OUT[213] = \<const0> ;
+  assign FIFO_OUT[213] = \^FIFO_OUT [251];
   assign FIFO_OUT[212] = \<const0> ;
   assign FIFO_OUT[211] = \<const0> ;
   assign FIFO_OUT[210] = \<const0> ;
   assign FIFO_OUT[209] = \<const0> ;
   assign FIFO_OUT[208] = \<const0> ;
   assign FIFO_OUT[207] = \<const0> ;
-  assign FIFO_OUT[206] = \<const0> ;
-  assign FIFO_OUT[205] = \<const0> ;
-  assign FIFO_OUT[204] = \<const0> ;
+  assign FIFO_OUT[206] = \^FIFO_OUT [251];
+  assign FIFO_OUT[205] = \^FIFO_OUT [251];
+  assign FIFO_OUT[204] = \^FIFO_OUT [251];
   assign FIFO_OUT[203] = \<const0> ;
-  assign FIFO_OUT[202] = \<const0> ;
-  assign FIFO_OUT[201] = \<const0> ;
-  assign FIFO_OUT[200] = \<const0> ;
+  assign FIFO_OUT[202] = \^FIFO_OUT [251];
+  assign FIFO_OUT[201] = \^FIFO_OUT [251];
+  assign FIFO_OUT[200] = \^FIFO_OUT [251];
   assign FIFO_OUT[199] = \<const0> ;
-  assign FIFO_OUT[198] = \<const0> ;
-  assign FIFO_OUT[197] = \<const0> ;
+  assign FIFO_OUT[198] = \^FIFO_OUT [251];
+  assign FIFO_OUT[197] = \^FIFO_OUT [251];
   assign FIFO_OUT[196] = \<const0> ;
-  assign FIFO_OUT[195] = \<const0> ;
-  assign FIFO_OUT[194] = \<const0> ;
-  assign FIFO_OUT[193] = \<const0> ;
-  assign FIFO_OUT[192] = \<const0> ;
+  assign FIFO_OUT[195] = \^FIFO_OUT [251];
+  assign FIFO_OUT[194] = \^FIFO_OUT [251];
+  assign FIFO_OUT[193] = \^FIFO_OUT [251];
+  assign FIFO_OUT[192] = \^FIFO_OUT [251];
   assign FIFO_OUT[191] = \<const0> ;
-  assign FIFO_OUT[190] = \<const0> ;
-  assign FIFO_OUT[189] = \<const0> ;
-  assign FIFO_OUT[188] = \<const0> ;
+  assign FIFO_OUT[190] = \^FIFO_OUT [251];
+  assign FIFO_OUT[189] = \^FIFO_OUT [251];
+  assign FIFO_OUT[188] = \^FIFO_OUT [251];
   assign FIFO_OUT[187] = \<const0> ;
   assign FIFO_OUT[186] = \<const0> ;
-  assign FIFO_OUT[185] = \<const0> ;
+  assign FIFO_OUT[185] = \^FIFO_OUT [251];
   assign FIFO_OUT[184] = \<const0> ;
   assign FIFO_OUT[183] = \<const0> ;
-  assign FIFO_OUT[182] = \<const0> ;
-  assign FIFO_OUT[181] = \<const0> ;
+  assign FIFO_OUT[182] = \^FIFO_OUT [251];
+  assign FIFO_OUT[181] = \^FIFO_OUT [251];
   assign FIFO_OUT[180] = \<const0> ;
-  assign FIFO_OUT[179] = \<const0> ;
-  assign FIFO_OUT[178] = \<const0> ;
+  assign FIFO_OUT[179] = \^FIFO_OUT [251];
+  assign FIFO_OUT[178] = \^FIFO_OUT [251];
   assign FIFO_OUT[177] = \<const0> ;
   assign FIFO_OUT[176] = \<const0> ;
   assign FIFO_OUT[175] = \<const0> ;
-  assign FIFO_OUT[174] = \<const0> ;
-  assign FIFO_OUT[173] = \<const0> ;
+  assign FIFO_OUT[174] = \^FIFO_OUT [251];
+  assign FIFO_OUT[173] = \^FIFO_OUT [251];
   assign FIFO_OUT[172] = \<const0> ;
   assign FIFO_OUT[171] = \<const0> ;
-  assign FIFO_OUT[170] = \<const0> ;
+  assign FIFO_OUT[170] = \^FIFO_OUT [251];
   assign FIFO_OUT[169] = \<const0> ;
   assign FIFO_OUT[168] = \<const0> ;
   assign FIFO_OUT[167] = \<const0> ;
   assign FIFO_OUT[166] = \<const0> ;
-  assign FIFO_OUT[165] = \<const0> ;
+  assign FIFO_OUT[165] = \^FIFO_OUT [251];
   assign FIFO_OUT[164] = \<const0> ;
   assign FIFO_OUT[163] = \<const0> ;
   assign FIFO_OUT[162] = \<const0> ;
   assign FIFO_OUT[161] = \<const0> ;
   assign FIFO_OUT[160] = \<const0> ;
   assign FIFO_OUT[159] = \<const0> ;
-  assign FIFO_OUT[158] = \<const0> ;
-  assign FIFO_OUT[157] = \<const0> ;
+  assign FIFO_OUT[158] = \^FIFO_OUT [251];
+  assign FIFO_OUT[157] = \^FIFO_OUT [251];
   assign FIFO_OUT[156] = \<const0> ;
   assign FIFO_OUT[155] = \<const0> ;
-  assign FIFO_OUT[154] = \<const0> ;
-  assign FIFO_OUT[153] = \<const0> ;
+  assign FIFO_OUT[154] = \^FIFO_OUT [251];
+  assign FIFO_OUT[153] = \^FIFO_OUT [251];
   assign FIFO_OUT[152] = \<const0> ;
   assign FIFO_OUT[151] = \<const0> ;
-  assign FIFO_OUT[150] = \^FIFO_OUT [148];
-  assign FIFO_OUT[149] = \<const0> ;
-  assign FIFO_OUT[148] = \^FIFO_OUT [148];
+  assign FIFO_OUT[150] = \^FIFO_OUT [251];
+  assign FIFO_OUT[149] = \^FIFO_OUT [251];
+  assign FIFO_OUT[148] = \^FIFO_OUT [251];
   assign FIFO_OUT[147] = \<const0> ;
   assign FIFO_OUT[146] = \<const0> ;
-  assign FIFO_OUT[145] = \^FIFO_OUT [148];
-  assign FIFO_OUT[144] = \^FIFO_OUT [148];
+  assign FIFO_OUT[145] = \^FIFO_OUT [251];
+  assign FIFO_OUT[144] = \<const0> ;
   assign FIFO_OUT[143] = \<const0> ;
-  assign FIFO_OUT[142] = \^FIFO_OUT [148];
-  assign FIFO_OUT[141] = \^FIFO_OUT [148];
+  assign FIFO_OUT[142] = \^FIFO_OUT [251];
+  assign FIFO_OUT[141] = \^FIFO_OUT [251];
   assign FIFO_OUT[140] = \<const0> ;
-  assign FIFO_OUT[139] = \^FIFO_OUT [148];
-  assign FIFO_OUT[138] = \<const0> ;
-  assign FIFO_OUT[137] = \<const0> ;
-  assign FIFO_OUT[136] = \<const0> ;
+  assign FIFO_OUT[139] = \^FIFO_OUT [251];
+  assign FIFO_OUT[138] = \^FIFO_OUT [251];
+  assign FIFO_OUT[137] = \^FIFO_OUT [251];
+  assign FIFO_OUT[136] = \^FIFO_OUT [251];
   assign FIFO_OUT[135] = \<const0> ;
-  assign FIFO_OUT[134] = \^FIFO_OUT [148];
-  assign FIFO_OUT[133] = \^FIFO_OUT [148];
+  assign FIFO_OUT[134] = \^FIFO_OUT [251];
+  assign FIFO_OUT[133] = \^FIFO_OUT [251];
   assign FIFO_OUT[132] = \<const0> ;
-  assign FIFO_OUT[131] = \<const0> ;
-  assign FIFO_OUT[130] = \^FIFO_OUT [148];
+  assign FIFO_OUT[131] = \^FIFO_OUT [251];
+  assign FIFO_OUT[130] = \^FIFO_OUT [251];
   assign FIFO_OUT[129] = \<const0> ;
-  assign FIFO_OUT[128] = \^FIFO_OUT [148];
+  assign FIFO_OUT[128] = \^FIFO_OUT [251];
   assign FIFO_OUT[127] = \<const0> ;
-  assign FIFO_OUT[126] = \^FIFO_OUT [148];
-  assign FIFO_OUT[125] = \^FIFO_OUT [148];
-  assign FIFO_OUT[124] = \^FIFO_OUT [148];
+  assign FIFO_OUT[126] = \<const0> ;
+  assign FIFO_OUT[125] = \^FIFO_OUT [251];
+  assign FIFO_OUT[124] = \<const0> ;
   assign FIFO_OUT[123] = \<const0> ;
   assign FIFO_OUT[122] = \<const0> ;
-  assign FIFO_OUT[121] = \^FIFO_OUT [148];
+  assign FIFO_OUT[121] = \<const0> ;
   assign FIFO_OUT[120] = \<const0> ;
   assign FIFO_OUT[119] = \<const0> ;
-  assign FIFO_OUT[118] = \^FIFO_OUT [148];
-  assign FIFO_OUT[117] = \^FIFO_OUT [148];
-  assign FIFO_OUT[116] = \<const0> ;
-  assign FIFO_OUT[115] = \^FIFO_OUT [148];
-  assign FIFO_OUT[114] = \<const0> ;
+  assign FIFO_OUT[118] = \^FIFO_OUT [251];
+  assign FIFO_OUT[117] = \^FIFO_OUT [251];
+  assign FIFO_OUT[116] = \^FIFO_OUT [251];
+  assign FIFO_OUT[115] = \<const0> ;
+  assign FIFO_OUT[114] = \^FIFO_OUT [251];
   assign FIFO_OUT[113] = \<const0> ;
-  assign FIFO_OUT[112] = \^FIFO_OUT [148];
+  assign FIFO_OUT[112] = \<const0> ;
   assign FIFO_OUT[111] = \<const0> ;
-  assign FIFO_OUT[110] = \<const0> ;
-  assign FIFO_OUT[109] = \^FIFO_OUT [148];
-  assign FIFO_OUT[108] = \^FIFO_OUT [148];
-  assign FIFO_OUT[107] = \^FIFO_OUT [148];
+  assign FIFO_OUT[110] = \^FIFO_OUT [251];
+  assign FIFO_OUT[109] = \^FIFO_OUT [251];
+  assign FIFO_OUT[108] = \<const0> ;
+  assign FIFO_OUT[107] = \^FIFO_OUT [251];
   assign FIFO_OUT[106] = \<const0> ;
-  assign FIFO_OUT[105] = \^FIFO_OUT [148];
+  assign FIFO_OUT[105] = \<const0> ;
   assign FIFO_OUT[104] = \<const0> ;
   assign FIFO_OUT[103] = \<const0> ;
-  assign FIFO_OUT[102] = \<const0> ;
-  assign FIFO_OUT[101] = \^FIFO_OUT [148];
+  assign FIFO_OUT[102] = \^FIFO_OUT [251];
+  assign FIFO_OUT[101] = \^FIFO_OUT [251];
   assign FIFO_OUT[100] = \<const0> ;
   assign FIFO_OUT[99] = \<const0> ;
-  assign FIFO_OUT[98] = \<const0> ;
+  assign FIFO_OUT[98] = \^FIFO_OUT [251];
   assign FIFO_OUT[97] = \<const0> ;
-  assign FIFO_OUT[96] = \<const0> ;
+  assign FIFO_OUT[96] = \^FIFO_OUT [251];
   assign FIFO_OUT[95] = \<const0> ;
   assign FIFO_OUT[94] = \<const0> ;
-  assign FIFO_OUT[93] = \<const0> ;
+  assign FIFO_OUT[93] = \^FIFO_OUT [251];
   assign FIFO_OUT[92] = \<const0> ;
   assign FIFO_OUT[91] = \<const0> ;
   assign FIFO_OUT[90] = \<const0> ;
   assign FIFO_OUT[89] = \<const0> ;
   assign FIFO_OUT[88] = \<const0> ;
   assign FIFO_OUT[87] = \<const0> ;
-  assign FIFO_OUT[86] = \<const0> ;
+  assign FIFO_OUT[86] = \^FIFO_OUT [251];
   assign FIFO_OUT[85] = \<const0> ;
   assign FIFO_OUT[84] = \<const0> ;
   assign FIFO_OUT[83] = \<const0> ;
-  assign FIFO_OUT[82] = \<const0> ;
-  assign FIFO_OUT[81] = \<const0> ;
+  assign FIFO_OUT[82] = \^FIFO_OUT [251];
+  assign FIFO_OUT[81] = \^FIFO_OUT [251];
   assign FIFO_OUT[80] = \<const0> ;
   assign FIFO_OUT[79] = \<const0> ;
-  assign FIFO_OUT[78] = \<const0> ;
+  assign FIFO_OUT[78] = \^FIFO_OUT [251];
   assign FIFO_OUT[77] = \<const0> ;
-  assign FIFO_OUT[76] = \<const0> ;
+  assign FIFO_OUT[76] = \^FIFO_OUT [251];
   assign FIFO_OUT[75] = \<const0> ;
   assign FIFO_OUT[74] = \<const0> ;
   assign FIFO_OUT[73] = \<const0> ;
   assign FIFO_OUT[72] = \<const0> ;
   assign FIFO_OUT[71] = \<const0> ;
-  assign FIFO_OUT[70] = \<const0> ;
+  assign FIFO_OUT[70] = \^FIFO_OUT [251];
   assign FIFO_OUT[69] = \<const0> ;
   assign FIFO_OUT[68] = \<const0> ;
   assign FIFO_OUT[67] = \<const0> ;
-  assign FIFO_OUT[66] = \<const0> ;
-  assign FIFO_OUT[65] = \<const0> ;
-  assign FIFO_OUT[64] = \<const0> ;
+  assign FIFO_OUT[66] = \^FIFO_OUT [251];
+  assign FIFO_OUT[65] = \^FIFO_OUT [251];
+  assign FIFO_OUT[64] = \^FIFO_OUT [251];
   assign FIFO_OUT[63] = \<const0> ;
-  assign FIFO_OUT[62] = \<const0> ;
+  assign FIFO_OUT[62] = \^FIFO_OUT [251];
   assign FIFO_OUT[61] = \<const0> ;
   assign FIFO_OUT[60] = \<const0> ;
   assign FIFO_OUT[59] = \<const0> ;
   assign FIFO_OUT[58] = \<const0> ;
   assign FIFO_OUT[57] = \<const0> ;
-  assign FIFO_OUT[56] = \<const0> ;
-  assign FIFO_OUT[55] = \^FIFO_OUT [148];
+  assign FIFO_OUT[56] = \^FIFO_OUT [251];
+  assign FIFO_OUT[55] = \<const0> ;
   assign FIFO_OUT[54] = \<const0> ;
-  assign FIFO_OUT[53] = \^FIFO_OUT [148];
-  assign FIFO_OUT[52] = \^FIFO_OUT [148];
-  assign FIFO_OUT[51] = \^FIFO_OUT [148];
-  assign FIFO_OUT[50] = \^FIFO_OUT [148];
+  assign FIFO_OUT[53] = \^FIFO_OUT [251];
+  assign FIFO_OUT[52] = \<const0> ;
+  assign FIFO_OUT[51] = \<const0> ;
+  assign FIFO_OUT[50] = \<const0> ;
   assign FIFO_OUT[49] = \<const0> ;
-  assign FIFO_OUT[48] = \<const0> ;
+  assign FIFO_OUT[48] = \^FIFO_OUT [251];
   assign FIFO_OUT[47] = \<const0> ;
-  assign FIFO_OUT[46] = \^FIFO_OUT [148];
-  assign FIFO_OUT[45] = \^FIFO_OUT [148];
+  assign FIFO_OUT[46] = \<const0> ;
+  assign FIFO_OUT[45] = \<const0> ;
   assign FIFO_OUT[44] = \<const0> ;
-  assign FIFO_OUT[43] = \<const0> ;
-  assign FIFO_OUT[42] = \<const0> ;
+  assign FIFO_OUT[43] = \^FIFO_OUT [251];
+  assign FIFO_OUT[42] = \^FIFO_OUT [251];
   assign FIFO_OUT[41] = \<const0> ;
-  assign FIFO_OUT[40] = \^FIFO_OUT [148];
+  assign FIFO_OUT[40] = \^FIFO_OUT [251];
   assign FIFO_OUT[39] = \<const0> ;
-  assign FIFO_OUT[38] = \^FIFO_OUT [148];
+  assign FIFO_OUT[38] = \<const0> ;
   assign FIFO_OUT[37] = \<const0> ;
   assign FIFO_OUT[36] = \<const0> ;
-  assign FIFO_OUT[35] = \^FIFO_OUT [148];
-  assign FIFO_OUT[34] = \^FIFO_OUT [148];
-  assign FIFO_OUT[33] = \^FIFO_OUT [148];
+  assign FIFO_OUT[35] = \^FIFO_OUT [251];
+  assign FIFO_OUT[34] = \<const0> ;
+  assign FIFO_OUT[33] = \^FIFO_OUT [251];
   assign FIFO_OUT[32] = \<const0> ;
   assign FIFO_OUT[31] = \<const0> ;
   assign FIFO_OUT[30] = \<const0> ;
@@ -564,10 +564,10 @@ module design_1_controller_0_0
   assign FIFO_OUT[18] = \<const0> ;
   assign FIFO_OUT[17] = \<const0> ;
   assign FIFO_OUT[16] = \<const0> ;
-  assign FIFO_OUT[15] = \^FIFO_OUT [148];
+  assign FIFO_OUT[15] = \<const0> ;
   assign FIFO_OUT[14] = \<const0> ;
-  assign FIFO_OUT[13] = \^FIFO_OUT [148];
-  assign FIFO_OUT[12] = \^FIFO_OUT [148];
+  assign FIFO_OUT[13] = \<const0> ;
+  assign FIFO_OUT[12] = \<const0> ;
   assign FIFO_OUT[11] = \<const0> ;
   assign FIFO_OUT[10] = \<const0> ;
   assign FIFO_OUT[9] = \<const0> ;
@@ -582,7 +582,7 @@ module design_1_controller_0_0
   assign FIFO_OUT[0] = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  design_1_controller_0_0_controller inst
+  design_1_controller_a_0_0_controller_a inst
        (.BUTTON(BUTTON),
         .CLK(CLK),
         .FIFO_OUT(\^FIFO_OUT ),
@@ -590,8 +590,8 @@ module design_1_controller_0_0
         .RESETN(RESETN));
 endmodule
 
-(* ORIG_REF_NAME = "controller" *) 
-module design_1_controller_0_0_controller
+(* ORIG_REF_NAME = "controller_a" *) 
+module design_1_controller_a_0_0_controller_a
    (FIFO_WR_EN,
     FIFO_OUT,
     BUTTON,
@@ -608,21 +608,21 @@ module design_1_controller_0_0_controller
   wire [0:0]FIFO_OUT;
   wire FIFO_WR_EN;
   wire RESETN;
-  wire \fifo_out[150]_i_1_n_0 ;
+  wire \fifo_out[254]_i_1_n_0 ;
 
   LUT3 #(
     .INIT(8'hF8)) 
-    \fifo_out[150]_i_1 
+    \fifo_out[254]_i_1 
        (.I0(FIFO_OUT),
         .I1(RESETN),
         .I2(BUTTON),
-        .O(\fifo_out[150]_i_1_n_0 ));
+        .O(\fifo_out[254]_i_1_n_0 ));
   (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 PRINTER WR_DATA" *) 
   (* X_INTERFACE_MODE = "master" *) 
-  FDRE \fifo_out_reg[150] 
+  FDRE \fifo_out_reg[254] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\fifo_out[150]_i_1_n_0 ),
+        .D(\fifo_out[254]_i_1_n_0 ),
         .Q(FIFO_OUT),
         .R(1'b0));
   (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 PRINTER WR_EN" *) 

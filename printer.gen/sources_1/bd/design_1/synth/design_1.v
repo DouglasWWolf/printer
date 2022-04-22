@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Fri Apr 22 15:55:10 2022
+//Date        : Fri Apr 22 16:34:18 2022
 //Host        : DESKTOP-06LMOH5 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -17,7 +17,6 @@ module design_1
     CPU_RESETN,
     LED,
     LED16_B,
-    UART_RXD,
     UART_TXD);
   input BTND;
   input BTNU;
@@ -25,7 +24,6 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.CPU_RESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.CPU_RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input CPU_RESETN;
   output [15:0]LED;
   output LED16_B;
-  input UART_RXD;
   output UART_TXD;
 
   wire CLK100MHZ_1;
@@ -33,11 +31,11 @@ module design_1
   wire PIN_0_1;
   wire PIN_0_2;
   wire axi_uartlite_0_tx;
-  wire button_0_Q;
+  wire btn_up_Q;
   wire button_0_Q1;
-  wire controller_0_FIFO_WRITE_FULL;
-  wire [543:0]controller_0_FIFO_WRITE_WR_DATA;
-  wire controller_0_FIFO_WRITE_WR_EN;
+  wire controller_a_0_PRINTER_FULL;
+  wire [543:0]controller_a_0_PRINTER_WR_DATA;
+  wire controller_a_0_PRINTER_WR_EN;
   wire controller_b_0_FIFO_WRITE_FULL;
   wire [543:0]controller_b_0_FIFO_WRITE_WR_DATA;
   wire controller_b_0_FIFO_WRITE_WR_EN;
@@ -62,7 +60,6 @@ module design_1
   wire [3:0]printer_M_AXI_WSTRB;
   wire printer_M_AXI_WVALID;
   wire printer_RESETN_OUT;
-  wire rx_0_1;
 
   assign CLK100MHZ_1 = CLK100MHZ;
   assign CPU_RESETN_1 = CPU_RESETN;
@@ -71,9 +68,8 @@ module design_1
   assign PIN_0_1 = BTNU;
   assign PIN_0_2 = BTND;
   assign UART_TXD = axi_uartlite_0_tx;
-  assign rx_0_1 = UART_RXD;
-  design_1_axi_uartlite_0_0 axi_uartlite_0
-       (.rx(rx_0_1),
+  design_1_axi_uartlite_0_0 axi_uartlite
+       (.rx(1'b0),
         .s_axi_aclk(printer_CLK_OUT),
         .s_axi_araddr(printer_M_AXI_ARADDR[3:0]),
         .s_axi_aresetn(printer_RESETN_OUT),
@@ -94,22 +90,22 @@ module design_1
         .s_axi_wstrb(printer_M_AXI_WSTRB),
         .s_axi_wvalid(printer_M_AXI_WVALID),
         .tx(axi_uartlite_0_tx));
-  design_1_button_0_0 btn_up
-       (.CLK(CLK100MHZ_1),
-        .PIN(PIN_0_1),
-        .Q(button_0_Q));
-  design_1_button_0_1 button_0
+  design_1_button_0_1 button_dn
        (.CLK(CLK100MHZ_1),
         .PIN(PIN_0_2),
         .Q(button_0_Q1));
-  design_1_controller_0_0 controller_0
-       (.BUTTON(button_0_Q),
+  design_1_button_0_0 button_up
+       (.CLK(CLK100MHZ_1),
+        .PIN(PIN_0_1),
+        .Q(btn_up_Q));
+  design_1_controller_a_0_0 controller_a
+       (.BUTTON(btn_up_Q),
         .CLK(CLK100MHZ_1),
-        .FIFO_FULL(controller_0_FIFO_WRITE_FULL),
-        .FIFO_OUT(controller_0_FIFO_WRITE_WR_DATA),
-        .FIFO_WR_EN(controller_0_FIFO_WRITE_WR_EN),
+        .FIFO_FULL(controller_a_0_PRINTER_FULL),
+        .FIFO_OUT(controller_a_0_PRINTER_WR_DATA),
+        .FIFO_WR_EN(controller_a_0_PRINTER_WR_EN),
         .RESETN(CPU_RESETN_1));
-  design_1_controller_b_0_0 controller_b_0
+  design_1_controller_b_0_0 controller_b
        (.BUTTON(button_0_Q1),
         .CLK(CLK100MHZ_1),
         .FIFO_FULL(controller_b_0_FIFO_WRITE_FULL),
@@ -120,9 +116,9 @@ module design_1
        (.BLINKY(printer_BLINKY),
         .CLK(CLK100MHZ_1),
         .CLK_OUT(printer_CLK_OUT),
-        .FIFO_00_FULL(controller_0_FIFO_WRITE_FULL),
-        .FIFO_00_IN(controller_0_FIFO_WRITE_WR_DATA),
-        .FIFO_00_WR_EN(controller_0_FIFO_WRITE_WR_EN),
+        .FIFO_00_FULL(controller_a_0_PRINTER_FULL),
+        .FIFO_00_IN(controller_a_0_PRINTER_WR_DATA),
+        .FIFO_00_WR_EN(controller_a_0_PRINTER_WR_EN),
         .FIFO_01_FULL(controller_b_0_FIFO_WRITE_FULL),
         .FIFO_01_IN(controller_b_0_FIFO_WRITE_WR_DATA),
         .FIFO_01_WR_EN(controller_b_0_FIFO_WRITE_WR_EN),

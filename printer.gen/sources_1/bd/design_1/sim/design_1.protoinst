@@ -3,7 +3,7 @@
 	"modules": {
 		"design_1": {
 			"proto_instances": {
-				"/axi_uartlite_0/S_AXI": {
+				"/axi_uartlite/S_AXI": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "s_axi_aclk"},

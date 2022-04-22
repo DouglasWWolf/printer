@@ -47,15 +47,15 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:controller:1.0
+// IP VLNV: xilinx.com:module_ref:controller_a:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "controller,Vivado 2021.2" *)
-(* CHECK_LICENSE_TYPE = "design_1_controller_0_0,controller,{}" *)
-(* CORE_GENERATION_INFO = "design_1_controller_0_0,controller,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=controller,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* X_CORE_INFO = "controller_a,Vivado 2021.2" *)
+(* CHECK_LICENSE_TYPE = "design_1_controller_a_0_0,controller_a,{}" *)
+(* CORE_GENERATION_INFO = "design_1_controller_a_0_0,controller_a,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=controller_a,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_controller_0_0 (
+module design_1_controller_a_0_0 (
   CLK,
   RESETN,
   BUTTON,
@@ -78,7 +78,7 @@ input wire FIFO_FULL;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 PRINTER WR_EN" *)
 output wire FIFO_WR_EN;
 
-  controller inst (
+  controller_a inst (
     .CLK(CLK),
     .RESETN(RESETN),
     .BUTTON(BUTTON),

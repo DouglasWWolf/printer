@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Fri Apr 22 15:55:10 2022
+//Date        : Fri Apr 22 16:34:18 2022
 //Host        : DESKTOP-06LMOH5 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -16,7 +16,6 @@ module design_1_wrapper
     CPU_RESETN,
     LED,
     LED16_B,
-    UART_RXD,
     UART_TXD);
   input BTND;
   input BTNU;
@@ -24,7 +23,6 @@ module design_1_wrapper
   input CPU_RESETN;
   output [15:0]LED;
   output LED16_B;
-  input UART_RXD;
   output UART_TXD;
 
   wire BTND;
@@ -33,7 +31,6 @@ module design_1_wrapper
   wire CPU_RESETN;
   wire [15:0]LED;
   wire LED16_B;
-  wire UART_RXD;
   wire UART_TXD;
 
   design_1 design_1_i
@@ -43,6 +40,5 @@ module design_1_wrapper
         .CPU_RESETN(CPU_RESETN),
         .LED(LED),
         .LED16_B(LED16_B),
-        .UART_RXD(UART_RXD),
         .UART_TXD(UART_TXD));
 endmodule

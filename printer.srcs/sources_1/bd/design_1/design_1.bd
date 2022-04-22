@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xB180A397D267C21D",
+      "boundary_crc": "0x1D2BC78866D97B4D",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../printer.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -11,12 +11,12 @@
       "validated": "true"
     },
     "design_tree": {
-      "btn_up": "",
-      "button_0": "",
-      "axi_uartlite_0": "",
+      "button_up": "",
+      "button_dn": "",
+      "axi_uartlite": "",
+      "controller_b": "",
       "printer": "",
-      "controller_0": "",
-      "controller_b_0": ""
+      "controller_a": ""
     },
     "ports": {
       "CPU_RESETN": {
@@ -69,9 +69,6 @@
       "BTND": {
         "direction": "I"
       },
-      "UART_RXD": {
-        "direction": "I"
-      },
       "UART_TXD": {
         "direction": "O"
       },
@@ -85,11 +82,11 @@
       }
     },
     "components": {
-      "btn_up": {
+      "button_up": {
         "vlnv": "xilinx.com:module_ref:button:1.0",
         "xci_name": "design_1_button_0_0",
         "xci_path": "ip\\design_1_button_0_0\\design_1_button_0_0.xci",
-        "inst_hier_path": "btn_up",
+        "inst_hier_path": "button_up",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "button",
@@ -114,11 +111,11 @@
           }
         }
       },
-      "button_0": {
+      "button_dn": {
         "vlnv": "xilinx.com:module_ref:button:1.0",
         "xci_name": "design_1_button_0_1",
         "xci_path": "ip\\design_1_button_0_1\\design_1_button_0_1.xci",
-        "inst_hier_path": "button_0",
+        "inst_hier_path": "button_dn",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "button",
@@ -143,14 +140,77 @@
           }
         }
       },
-      "axi_uartlite_0": {
+      "axi_uartlite": {
         "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
         "xci_name": "design_1_axi_uartlite_0_0",
         "xci_path": "ip\\design_1_axi_uartlite_0_0\\design_1_axi_uartlite_0_0.xci",
-        "inst_hier_path": "axi_uartlite_0",
+        "inst_hier_path": "axi_uartlite",
         "parameters": {
           "C_BAUDRATE": {
             "value": "115200"
+          }
+        }
+      },
+      "controller_b": {
+        "vlnv": "xilinx.com:module_ref:controller_b:1.0",
+        "xci_name": "design_1_controller_b_0_0",
+        "xci_path": "ip\\design_1_controller_b_0_0\\design_1_controller_b_0_0.xci",
+        "inst_hier_path": "controller_b",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "controller_b",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "PRINTER": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:fifo_write:1.0",
+            "vlnv": "xilinx.com:interface:fifo_write_rtl:1.0",
+            "port_maps": {
+              "WR_DATA": {
+                "physical_name": "FIFO_OUT",
+                "direction": "O",
+                "left": "543",
+                "right": "0"
+              },
+              "WR_EN": {
+                "physical_name": "FIFO_WR_EN",
+                "direction": "O"
+              },
+              "FULL": {
+                "physical_name": "FIFO_FULL",
+                "direction": "I"
+              }
+            }
+          }
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESETN",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK100MHZ",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BUTTON": {
+            "direction": "I"
           }
         }
       },
@@ -466,77 +526,14 @@
           }
         }
       },
-      "controller_0": {
-        "vlnv": "xilinx.com:module_ref:controller:1.0",
-        "xci_name": "design_1_controller_0_0",
-        "xci_path": "ip\\design_1_controller_0_0\\design_1_controller_0_0.xci",
-        "inst_hier_path": "controller_0",
+      "controller_a": {
+        "vlnv": "xilinx.com:module_ref:controller_a:1.0",
+        "xci_name": "design_1_controller_a_0_0",
+        "xci_path": "ip\\design_1_controller_a_0_0\\design_1_controller_a_0_0.xci",
+        "inst_hier_path": "controller_a",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "controller",
-          "boundary_crc": "0x0"
-        },
-        "interface_ports": {
-          "PRINTER": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:fifo_write:1.0",
-            "vlnv": "xilinx.com:interface:fifo_write_rtl:1.0",
-            "port_maps": {
-              "WR_DATA": {
-                "physical_name": "FIFO_OUT",
-                "direction": "O",
-                "left": "543",
-                "right": "0"
-              },
-              "WR_EN": {
-                "physical_name": "FIFO_WR_EN",
-                "direction": "O"
-              },
-              "FULL": {
-                "physical_name": "FIFO_FULL",
-                "direction": "I"
-              }
-            }
-          }
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "RESETN",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_CLK100MHZ",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "RESETN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BUTTON": {
-            "direction": "I"
-          }
-        }
-      },
-      "controller_b_0": {
-        "vlnv": "xilinx.com:module_ref:controller_b:1.0",
-        "xci_name": "design_1_controller_b_0_0",
-        "xci_path": "ip\\design_1_controller_b_0_0\\design_1_controller_b_0_0.xci",
-        "inst_hier_path": "controller_b_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "controller_b",
+          "ref_name": "controller_a",
           "boundary_crc": "0x0"
         },
         "interface_ports": {
@@ -594,22 +591,22 @@
       }
     },
     "interface_nets": {
-      "controller_0_FIFO_WRITE": {
+      "controller_a_0_PRINTER": {
         "interface_ports": [
-          "controller_0/PRINTER",
+          "controller_a/PRINTER",
           "printer/FIFO_00_WRITE"
         ]
       },
       "controller_b_0_FIFO_WRITE": {
         "interface_ports": [
-          "controller_b_0/PRINTER",
+          "controller_b/PRINTER",
           "printer/FIFO_01_WRITE"
         ]
       },
       "printer_M_AXI": {
         "interface_ports": [
           "printer/M_AXI",
-          "axi_uartlite_0/S_AXI"
+          "axi_uartlite/S_AXI"
         ]
       }
     },
@@ -617,49 +614,49 @@
       "CLK100MHZ_1": {
         "ports": [
           "CLK100MHZ",
-          "btn_up/CLK",
-          "button_0/CLK",
+          "button_up/CLK",
+          "button_dn/CLK",
+          "controller_b/CLK",
           "printer/CLK",
-          "controller_0/CLK",
-          "controller_b_0/CLK"
+          "controller_a/CLK"
         ]
       },
       "CPU_RESETN_1": {
         "ports": [
           "CPU_RESETN",
+          "controller_b/RESETN",
           "printer/RESETN",
-          "controller_0/RESETN",
-          "controller_b_0/RESETN"
+          "controller_a/RESETN"
         ]
       },
       "PIN_0_1": {
         "ports": [
           "BTNU",
-          "btn_up/PIN"
+          "button_up/PIN"
         ]
       },
       "PIN_0_2": {
         "ports": [
           "BTND",
-          "button_0/PIN"
+          "button_dn/PIN"
         ]
       },
       "axi_uartlite_0_tx": {
         "ports": [
-          "axi_uartlite_0/tx",
+          "axi_uartlite/tx",
           "UART_TXD"
         ]
       },
-      "button_0_Q": {
+      "btn_up_Q": {
         "ports": [
-          "btn_up/Q",
-          "controller_0/BUTTON"
+          "button_up/Q",
+          "controller_a/BUTTON"
         ]
       },
       "button_0_Q1": {
         "ports": [
-          "button_0/Q",
-          "controller_b_0/BUTTON"
+          "button_dn/Q",
+          "controller_b/BUTTON"
         ]
       },
       "printer_BLINKY": {
@@ -671,7 +668,7 @@
       "printer_CLK_OUT": {
         "ports": [
           "printer/CLK_OUT",
-          "axi_uartlite_0/s_axi_aclk"
+          "axi_uartlite/s_axi_aclk"
         ]
       },
       "printer_LED": {
@@ -683,13 +680,7 @@
       "printer_RESETN_OUT": {
         "ports": [
           "printer/RESETN_OUT",
-          "axi_uartlite_0/s_axi_aresetn"
-        ]
-      },
-      "rx_0_1": {
-        "ports": [
-          "UART_RXD",
-          "axi_uartlite_0/rx"
+          "axi_uartlite/s_axi_aresetn"
         ]
       }
     },
@@ -699,7 +690,7 @@
           "M_AXI": {
             "segments": {
               "SEG_axi_uartlite_0_Reg": {
-                "address_block": "/axi_uartlite_0/S_AXI/Reg",
+                "address_block": "/axi_uartlite/S_AXI/Reg",
                 "offset": "0x40600000",
                 "range": "64K"
               }

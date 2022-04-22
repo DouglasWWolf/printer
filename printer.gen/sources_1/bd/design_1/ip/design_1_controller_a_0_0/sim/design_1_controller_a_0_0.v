@@ -47,14 +47,14 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:controller:1.0
+// IP VLNV: xilinx.com:module_ref:controller_a:1.0
 // IP Revision: 1
 
 `timescale 1ns/1ps
 
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_controller_0_0 (
+module design_1_controller_a_0_0 (
   CLK,
   RESETN,
   BUTTON,
@@ -77,7 +77,7 @@ input wire FIFO_FULL;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 PRINTER WR_EN" *)
 output wire FIFO_WR_EN;
 
-  controller inst (
+  controller_a inst (
     .CLK(CLK),
     .RESETN(RESETN),
     .BUTTON(BUTTON),
