@@ -1,0 +1,7 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+C:/fpga/printer/printer.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
+C:/fpga/printer/printer.srcs/sim_1/imports/sim/tb.v,1650328822,verilog,,,,main,,,../../../../printer.srcs/sources_1/new,,,,,
+C:/fpga/printer/printer.srcs/sim_1/imports/sim/to_hex.v,1650335820,verilog,,C:/fpga/printer/printer.srcs/sim_1/imports/sim/tb.v,,framework;to_ascii_hex,,,../../../../printer.srcs/sources_1/new,,,,,

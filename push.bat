@@ -1,6 +1,8 @@
 @echo off
-set project=axi_dev
+set project=printer
+git add %project%.gen
 git add %project%.hw
+git add %project%.ip_user_files
 git add %project%.sim
 git add %project%.srcs
 git add %project%.xpr
