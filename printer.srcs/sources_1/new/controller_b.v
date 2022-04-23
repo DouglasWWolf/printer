@@ -32,7 +32,7 @@ module controller_b
     always @(posedge CLK) begin
         free_running <= free_running + 1;
         
-        // If no one sets "state", by default increment it
+        // If any "case" below fails to set a new value for "state", by default increment it 
         if (state) state <= state+1;
         
         if (RESETN == 0) begin
