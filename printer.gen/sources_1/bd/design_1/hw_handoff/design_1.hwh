@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 22 16:34:18 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 22 22:11:54 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.0" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -7,8 +7,8 @@
     <PORT DIR="I" NAME="CPU_RESETN" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_CPU_RESETN">
       <CONNECTIONS>
         <CONNECTION INSTANCE="controller_b" PORT="RESETN"/>
-        <CONNECTION INSTANCE="printer" PORT="RESETN"/>
         <CONNECTION INSTANCE="controller_a" PORT="RESETN"/>
+        <CONNECTION INSTANCE="printer" PORT="RESETN"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK100MHZ" SIGIS="clk" SIGNAME="External_Ports_CLK100MHZ">
@@ -16,8 +16,8 @@
         <CONNECTION INSTANCE="button_up" PORT="CLK"/>
         <CONNECTION INSTANCE="button_dn" PORT="CLK"/>
         <CONNECTION INSTANCE="controller_b" PORT="CLK"/>
-        <CONNECTION INSTANCE="printer" PORT="CLK"/>
         <CONNECTION INSTANCE="controller_a" PORT="CLK"/>
+        <CONNECTION INSTANCE="printer" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="BTNU" SIGIS="undef" SIGNAME="External_Ports_BTNU">
@@ -33,16 +33,6 @@
     <PORT DIR="O" NAME="UART_TXD" SIGIS="undef" SIGNAME="axi_uartlite_tx">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_uartlite" PORT="tx"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED16_B" SIGIS="undef" SIGNAME="printer_BLINKY">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="printer" PORT="BLINKY"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="15" NAME="LED" RIGHT="0" SIGIS="undef" SIGNAME="printer_LED">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="printer" PORT="LED"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -618,16 +608,6 @@
         <PORT DIR="O" NAME="RESETN_OUT" SIGIS="undef" SIGNAME="printer_RESETN_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_uartlite" PORT="s_axi_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="LED" RIGHT="0" SIGIS="undef" SIGNAME="printer_LED">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="LED"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="BLINKY" SIGIS="undef" SIGNAME="printer_BLINKY">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="LED16_B"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M_AXI_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="axi_uartlite_s_axi_awaddr">

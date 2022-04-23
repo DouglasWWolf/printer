@@ -65,8 +65,6 @@ module design_1_printer_0_1 (
   RESETN,
   CLK_OUT,
   RESETN_OUT,
-  LED,
-  BLINKY,
   M_AXI_AWADDR,
   M_AXI_AWVALID,
   M_AXI_AWREADY,
@@ -108,8 +106,6 @@ input wire CLK;
 input wire RESETN;
 output wire CLK_OUT;
 output wire RESETN_OUT;
-output wire [15 : 0] LED;
-output wire BLINKY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI AWADDR" *)
 output wire [31 : 0] M_AXI_AWADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI AWVALID" *)
@@ -165,8 +161,6 @@ output wire M_AXI_RREADY;
     .RESETN(RESETN),
     .CLK_OUT(CLK_OUT),
     .RESETN_OUT(RESETN_OUT),
-    .LED(LED),
-    .BLINKY(BLINKY),
     .M_AXI_AWADDR(M_AXI_AWADDR),
     .M_AXI_AWVALID(M_AXI_AWVALID),
     .M_AXI_AWREADY(M_AXI_AWREADY),

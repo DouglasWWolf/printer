@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x1D2BC78866D97B4D",
+      "boundary_crc": "0xD81014F3A01FF4A6",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../printer.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -15,8 +15,8 @@
       "button_dn": "",
       "axi_uartlite": "",
       "controller_b": "",
-      "printer": "",
-      "controller_a": ""
+      "controller_a": "",
+      "printer": ""
     },
     "ports": {
       "CPU_RESETN": {
@@ -71,14 +71,6 @@
       },
       "UART_TXD": {
         "direction": "O"
-      },
-      "LED16_B": {
-        "direction": "O"
-      },
-      "LED": {
-        "direction": "O",
-        "left": "15",
-        "right": "0"
       }
     },
     "components": {
@@ -159,6 +151,69 @@
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "controller_b",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "PRINTER": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:fifo_write:1.0",
+            "vlnv": "xilinx.com:interface:fifo_write_rtl:1.0",
+            "port_maps": {
+              "WR_DATA": {
+                "physical_name": "FIFO_OUT",
+                "direction": "O",
+                "left": "543",
+                "right": "0"
+              },
+              "WR_EN": {
+                "physical_name": "FIFO_WR_EN",
+                "direction": "O"
+              },
+              "FULL": {
+                "physical_name": "FIFO_FULL",
+                "direction": "I"
+              }
+            }
+          }
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESETN",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK100MHZ",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BUTTON": {
+            "direction": "I"
+          }
+        }
+      },
+      "controller_a": {
+        "vlnv": "xilinx.com:module_ref:controller_a:1.0",
+        "xci_name": "design_1_controller_a_0_0",
+        "xci_path": "ip\\design_1_controller_a_0_0\\design_1_controller_a_0_0.xci",
+        "inst_hier_path": "controller_a",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "controller_a",
           "boundary_crc": "0x0"
         },
         "interface_ports": {
@@ -507,14 +562,6 @@
           },
           "RESETN_OUT": {
             "direction": "O"
-          },
-          "LED": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          },
-          "BLINKY": {
-            "direction": "O"
           }
         },
         "addressing": {
@@ -523,69 +570,6 @@
               "range": "4G",
               "width": "32"
             }
-          }
-        }
-      },
-      "controller_a": {
-        "vlnv": "xilinx.com:module_ref:controller_a:1.0",
-        "xci_name": "design_1_controller_a_0_0",
-        "xci_path": "ip\\design_1_controller_a_0_0\\design_1_controller_a_0_0.xci",
-        "inst_hier_path": "controller_a",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "controller_a",
-          "boundary_crc": "0x0"
-        },
-        "interface_ports": {
-          "PRINTER": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:fifo_write:1.0",
-            "vlnv": "xilinx.com:interface:fifo_write_rtl:1.0",
-            "port_maps": {
-              "WR_DATA": {
-                "physical_name": "FIFO_OUT",
-                "direction": "O",
-                "left": "543",
-                "right": "0"
-              },
-              "WR_EN": {
-                "physical_name": "FIFO_WR_EN",
-                "direction": "O"
-              },
-              "FULL": {
-                "physical_name": "FIFO_FULL",
-                "direction": "I"
-              }
-            }
-          }
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "RESETN",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_CLK100MHZ",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "RESETN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BUTTON": {
-            "direction": "I"
           }
         }
       }
@@ -617,16 +601,16 @@
           "button_up/CLK",
           "button_dn/CLK",
           "controller_b/CLK",
-          "printer/CLK",
-          "controller_a/CLK"
+          "controller_a/CLK",
+          "printer/CLK"
         ]
       },
       "CPU_RESETN_1": {
         "ports": [
           "CPU_RESETN",
           "controller_b/RESETN",
-          "printer/RESETN",
-          "controller_a/RESETN"
+          "controller_a/RESETN",
+          "printer/RESETN"
         ]
       },
       "PIN_0_1": {
@@ -659,22 +643,10 @@
           "controller_b/BUTTON"
         ]
       },
-      "printer_BLINKY": {
-        "ports": [
-          "printer/BLINKY",
-          "LED16_B"
-        ]
-      },
       "printer_CLK_OUT": {
         "ports": [
           "printer/CLK_OUT",
           "axi_uartlite/s_axi_aclk"
-        ]
-      },
-      "printer_LED": {
-        "ports": [
-          "printer/LED",
-          "LED"
         ]
       },
       "printer_RESETN_OUT": {
