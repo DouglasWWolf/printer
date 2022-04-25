@@ -11,7 +11,7 @@ preplace port port-id_CPU_RESETN -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
 preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
 preplace port port-id_BTNU -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
 preplace port port-id_BTND -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
-preplace port port-id_UART_TXD -pg 1 -lvl 5 -x 1040 -y 120 -defaultsOSRD
+preplace port port-id_UART_TXD -pg 1 -lvl 5 -x 1050 -y 120 -defaultsOSRD
 preplace inst button_up -pg 1 -lvl 1 -x 100 -y 220 -defaultsOSRD -pinDir CLK left -pinY CLK 0L -pinDir PIN left -pinY PIN 20L -pinDir Q right -pinY Q 60R
 preplace inst button_dn -pg 1 -lvl 1 -x 100 -y 60 -swap {1 0 2} -defaultsOSRD -pinDir CLK left -pinY CLK 20L -pinDir PIN left -pinY PIN 0L -pinDir Q right -pinY Q 0R
 preplace inst axi_uartlite -pg 1 -lvl 4 -x 910 -y 100 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir UART right -pinY UART 0R -pinDir UART.tx right -pinY UART.tx 20R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L -pinDir interrupt right -pinY interrupt 40R
@@ -23,18 +23,18 @@ preplace netloc CPU_RESETN_1 1 0 3 NJ 160 180 180 460J
 preplace netloc PIN_0_1 1 0 1 NJ 240
 preplace netloc PIN_0_2 1 0 1 NJ 60
 preplace netloc axi_uartlite_0_tx 1 4 1 N 120
+preplace netloc btn_up_Q 1 1 1 N 280
 preplace netloc button_0_Q1 1 1 1 N 60
 preplace netloc printer_CLK_OUT 1 3 1 N 120
 preplace netloc printer_RESETN_OUT 1 3 1 N 140
-preplace netloc btn_up_Q 1 1 1 N 280
+preplace netloc controller_a_0_PRINTER 1 2 1 N 240
 preplace netloc controller_b_0_FIFO_WRITE 1 2 1 N 100
 preplace netloc printer_M_AXI 1 3 1 N 100
-preplace netloc controller_a_0_PRINTER 1 2 1 N 240
-levelinfo -pg 1 0 100 330 640 910 1040
-pagesize -pg 1 -db -bbox -sgen -150 0 1170 340
+levelinfo -pg 1 0 100 330 640 910 1050
+pagesize -pg 1 -db -bbox -sgen -150 0 1180 340
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-233,-183",
+   "No Loops_TopLeft":"-228,-182",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
 preplace port port-id_CPU_RESETN -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD

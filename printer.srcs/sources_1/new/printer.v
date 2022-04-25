@@ -240,9 +240,18 @@ module printer#
                         write_state   <= 2;
                     end
 
-                    // Keep track of whether we have seen the slave raise AWREADY and/or WREADY         
-                    if (avalid_and_ready) saw_waddr_ready <= 1;
-                    if (wvalid_and_ready) saw_wdata_ready <= 1; 
+                    // Keep track of whether we have seen the slave raise AWREADY
+                    if (avalid_and_ready) begin
+                        saw_waddr_ready <= 1;
+                        m_axi_awvalid   <= 0;
+                    end
+
+                    // Keep track of whether we have seen the slave raise WREADY
+                    if (wvalid_and_ready) begin
+                        saw_wdata_ready <= 1; 
+                        m_axi_wvalid    <= 0;
+                    end
+                    
                  end
                 
            // Wait around for the slave to assert "M_AXI_BVALID".  When it does, we'll acknowledge
@@ -315,12 +324,17 @@ module printer#
             
             // Wait around for the slave to raise M_AXI_RVALID, which tells us that M_AXI_RDATA
             // contains the data we requested
-            1:  if (M_AXI_RVALID && M_AXI_RREADY) begin
-                    amci_rdata    <= M_AXI_RDATA;
-                    amci_rresp    <= M_AXI_RRESP;
-                    m_axi_rready  <= 0;
-                    m_axi_arvalid <= 0;
-                    read_state    <= 0;
+            1:  begin
+                    if (M_AXI_ARVALID && M_AXI_ARREADY)
+                        m_axi_arvalid <= 0;
+            
+                    if (M_AXI_RVALID && M_AXI_RREADY) begin
+                        amci_rdata    <= M_AXI_RDATA;
+                        amci_rresp    <= M_AXI_RRESP;
+                        m_axi_rready  <= 0;
+                        m_axi_arvalid <= 0;
+                        read_state    <= 0;
+                    end
                 end
 
         endcase
