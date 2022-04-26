@@ -1,1 +1,1 @@
-Doug's project for developing the "printer" object
+Example project that demonstrates the usage of the "printer.v" module.
