@@ -1,5 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/fpga/printer/printer.srcs/sim_1/imports/sim/to_hex.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module to_ascii_hex
-INFO: [VRFC 10-311] analyzing module framework
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/fpga/printer/printer.srcs/sim_1/imports/sim/tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module main
